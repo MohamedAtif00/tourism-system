@@ -15,7 +15,7 @@ namespace tourism_system.Infrastructure.Repository
 
         public  async Task<List<TourismLocation>> GetAll(TourismType tourismType)
         {
-            return await _context.tourismLocations.Where(x =>x.TourismType == tourismType).ToListAsync();
+            return await _context.tourismLocations.Where(x =>x.TourismType == tourismType).Take(3).ToListAsync();
             //return await _context.tourismLocations
             //.OrderBy(x => x.TourismType != tourismType)
             //.ThenBy(x => x.Name).ToListAsync();

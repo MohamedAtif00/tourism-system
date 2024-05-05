@@ -43,7 +43,7 @@ namespace tourism_system.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromForm] RegisterRequest request )
         {
-            var result = await _authenticationService.Register(request.username, request.email, request.password, "User",request.TourismType);
+            var result = await _authenticationService.Register(request.username, request.email, request.password, "User",TourismType.Beach);
 
             return Ok(result);
         }
